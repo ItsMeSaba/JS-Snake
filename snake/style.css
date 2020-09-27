@@ -1,0 +1,147 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+:root { 
+    --bodyHeight : 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Comic Sans MS;
+}
+
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    height: var(--bodyHeight);
+    width: 100vw;
+    background-color: rgb(40, 40, 40);
+    overflow: hidden;
+}
+
+
+
+div.main {
+    color: white;
+    min-height: 40vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    min-width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5rem;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.startGame {
+    width: 50%;
+    margin: auto;
+    padding: 10px 0;
+    background-color: transparent;
+    color: white;
+    border: solid 2px #e84118;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: .6s background-color;
+}
+
+.startGame:hover {
+    background-color: #e84118;
+}
+
+
+.chooseControll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.chooseControll > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.chooseControll > div img {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    max-width: 100px;
+}
+
+.chooseControll > div > div {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.soon {
+    font-size: 1rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+.highScore {
+    font-size: 1rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color:white
+}
+
+.settings {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.credits {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    color: white;
+}
+
+@media(max-width: 760px) {
+    html {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,169 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+:root { 
+    --bodyHeight : 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Comic Sans MS;
+    color: white;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+body {
+    background-color: rgb(40, 40, 40);
+    overflow: hidden;
+    height: var(--bodyHeight);
+}
+
+::backdrop
+{
+    background-color: rgb(40, 40, 40);
+}
+
+.menuBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 999;
+}   
+
+/* .start {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* .start button#go {
+    font-size: 1.2rem;
+    width: 20%;
+    height: 50px;
+    border: solid 1px #e84118;
+    background-color: transparent;
+    cursor: pointer; 
+} */
+
+.over {
+    display: none;
+    position: absolute;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    text-align: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    font-size: 2rem;
+}
+
+.over button {
+    cursor: pointer;
+    padding: 5px 10px;
+    color: black;
+    min-width: 20%;
+    margin: auto;
+    padding: 10px 0;
+    background-color: transparent;
+    color: white;
+    border: solid 2px #e84118;
+    outline: none;
+}
+
+.over a {
+    padding: 0 10px;
+}
+
+.over p {
+    padding: 15px 0;
+}
+
+canvas {
+    border: solid 1px white;
+    width: 70%;
+}
+
+.container {
+    width: 100vw;
+    height: var(--bodyHeight);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+}
+
+.buttons {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.buttons span {
+    display: inline-block;
+    width: 20vw;
+    height: 30px;
+}
+
+.buttons img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+
+.container .box {
+    width: 90%;
+    text-align: center;
+}
+
+.container .box p {
+    font-size: 1.5rem;
+}
+
+.mobileButtons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 5vh;
+    border: solid 1px white;
+    outline: none;
+    background-color: transparent;
+}
+
+@media (max-width: 760px) {
+    .container table {
+        display: block;
+    }
+
+    canvas {
+        width: 90%;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168546471-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-168546471-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="../index.html" class='back'><img src="svg/back.svg"/></a>
+
+    <div class="colors">
+        <p>Snake Colors</p>
+
+        <div class="box">
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+        </div>
+    </div>
+
+
+
+    <div class="chooseControll">
+        <p>Choose Controlls</p>
+
+        <div class="box">
+            <div>
+                <img src="svg/keyboard.svg" alt="Keyboard" class='controll' id="keyboard">
+
+                <p>Keyboard</p>
+            </div>
+            
+            <div>
+                <img src="svg/swipe.svg" alt="Swipe" class='controll' id="swipe">
+            
+                <p>Swipe</p>
+            </div>
+
+            <div> 
+                <img src="svg/tap.svg" alt="Buttons" class='controll' id="buttons">
+                
+                <p>Buttons</p>
+                
+                <input type="range" min='20' max='80' id="slider">
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

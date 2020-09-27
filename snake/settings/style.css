@@ -1,0 +1,213 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+:root { 
+    --bodyHeight : 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Comic Sans MS;
+}
+
+body {
+    width: 100vw;
+    height: var(--bodyHeight);
+    /* min-height: 100vh; */
+    background-color: rgb(40, 40, 40);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+
+p {
+    color: white;
+    font-size: 1rem;
+}
+
+/*  */
+
+
+.back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.back img {
+    width: 100%;
+}
+
+/*  */
+
+.colors {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.colors p {
+    padding: 0 0 30px 0;
+}
+
+.colors .box {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.colors .box div.color {
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.colors .box div.selected {
+    width: 2rem;
+    height: 2rem;
+    -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+}
+
+
+.colors .box div:nth-child(1) {
+    background-color: red;
+}
+.colors .box div:nth-child(2) {
+    background-color: blue;
+}
+.colors .box div:nth-child(3) {
+    background-color: purple;
+}
+.colors .box div:nth-child(4) {
+    background-color: lime;
+}
+.colors .box div:nth-child(5) {
+    background-color: white;
+}
+.colors .box div:nth-child(6) {
+    background-color: yellow;
+}
+
+
+/*  */
+
+
+.mobileButtons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.mobileButtons > * {
+    margin: 10px 0;
+}
+
+.mobileButtons .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+
+.mobileButtons .box > * {
+    margin: 0 5px;
+}
+
+/*  */
+
+
+.chooseControll {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.chooseControll > div {
+    padding: 50px 0 0 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chooseControll > div img {
+    cursor: pointer;
+    display: inline-block;
+    width: 90%;
+    max-width: 100px;
+}
+
+.chooseControll > div > div {
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.chooseControll > div > div input[type='range'] {
+    position: absolute;
+    width: 70%;
+    transform: translateX(-50%);
+}
+
+
+@media(max-width: 800px) {
+    .chooseControll {
+        width: 95%;
+    }
+}
