@@ -26,7 +26,7 @@ canvas {
     /* border: solid 1px white; */
     width: 70%;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
+    box-shadow: 0 0 12px rgb(0, 0, 0);
 }
 
 ::backdrop {
