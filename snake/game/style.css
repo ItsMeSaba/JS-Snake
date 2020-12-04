@@ -17,12 +17,19 @@
 
 body {
     background-color: rgb(40, 40, 40);
+    /* background-color: white; */
     overflow: hidden;
     height: var(--bodyHeight);
 }
 
-::backdrop
-{
+canvas {
+    /* border: solid 1px white; */
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+::backdrop {
     background-color: rgb(40, 40, 40);
 }
 
@@ -35,27 +42,6 @@ body {
     cursor: pointer;
     z-index: 999;
 }   
-
-/* .start {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, .8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-/* .start button#go {
-    font-size: 1.2rem;
-    width: 20%;
-    height: 50px;
-    border: solid 1px #e84118;
-    background-color: transparent;
-    cursor: pointer; 
-} */
 
 .over {
     display: none;
@@ -95,11 +81,6 @@ body {
 
 .over p {
     padding: 15px 0;
-}
-
-canvas {
-    border: solid 1px white;
-    width: 70%;
 }
 
 .container {
@@ -156,6 +137,14 @@ canvas {
     border: solid 1px white;
     outline: none;
     background-color: transparent;
+}
+
+#score {
+    position: absolute;
+    font-size: 4rem;
+    color: rgba(0, 0, 0, 1);
+    top: 30px;
+    display: none;
 }
 
 @media (max-width: 760px) {

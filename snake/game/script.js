@@ -4,10 +4,6 @@ let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext("2d");
 
 
-
-//Add event listener to restart button
-document.getElementById('restart').addEventListener('click', () => location.reload());
-
 class Snake {
     constructor() {
         this.canvasWidth = 70;
@@ -16,6 +12,7 @@ class Snake {
         this.lost = false;
         this.interval = 40;
         this.color = null;
+        this.maxColor = 30;
         this.snake = [
             {x: 3*this.blockSize, y: Math.floor(canvas.height/this.blockSize/2)*this.blockSize},
             {x: 2*this.blockSize, y: Math.floor(canvas.height/this.blockSize/2)*this.blockSize},
@@ -66,6 +63,32 @@ class Snake {
         }
     }
 
+    clearCanvas() {
+        let [x, y, block] = [0, 0, this.blockSize];
+
+        let dark = true;   
+
+        while(x < canvas.width/block && y < canvas.height/block) {
+            ctx.beginPath();
+            ctx.fillStyle = dark ? 'rgb(50, 50, 50)' : 'rgb(30, 30, 30)';
+            ctx.rect(x*block, y*block, block, block);
+            ctx.fill();
+            ctx.closePath();
+
+            x++;
+            if(canvas.width/block <= x) {
+                y++;
+
+                x=0;   
+
+                dark = !dark
+            };
+
+            dark = !dark
+        }
+
+    }
+
     setParameters() {
         //Shows Buttons if is set
         if(localStorage.keyboard == 'true') {
@@ -87,21 +110,20 @@ class Snake {
             x.style.width = localStorage.buttonSize + 'px';
         })
 
-
         //Snake Color
         this.color = localStorage.snakeColor ? localStorage.snakeColor : 'yellow';
     }
 
     //Draw snake on canvas
     draw() {       
-        let snake1;
+        let snake;
         for(let i = 0; i  < this.snake.length; i++) {
-            snake1 = this.snake[i];
+            snake = this.snake[i];
 
             ctx.beginPath();
             ctx.fillStyle = this.color;
             ctx.strokeStyle = 'rgb(40,40,40)';
-            ctx.rect(snake1.x, snake1.y , this.blockSize, this.blockSize);
+            ctx.rect(snake.x, snake.y , this.blockSize, this.blockSize);
             ctx.stroke();
             ctx.fill();
             ctx.closePath();
@@ -220,6 +242,13 @@ class Snake {
     foodCollision() {
         if(this.snake[0].x < this.food.x + this.blockSize && this.snake[0].x + this.blockSize > this.food.x) {
             if(this.snake[0].y < this.food.y + this.blockSize && this.snake[0].y + this.blockSize > this.food.y) {
+                // let rand = () => Math.floor(Math.random() * 256);
+                
+                // let color1 = `rgb(${rand()}, ${rand()}, ${rand()})`
+                // let color2 = `rgb(${rand()}, ${rand()}, ${rand()})`
+                
+                // document.body.style.backgroundImage = `linear-gradient(to right, ${color1}, ${color2})`;
+
                 this.addFood();
 
                 this.score++;
@@ -229,11 +258,12 @@ class Snake {
                     y: this.snake[this.snake.length-1].y
                 })
 
+                if(this.maxColor < 255) this.maxColor += 10;
+
                 document.getElementById('score').innerHTML = `Score: ${this.score}`;
             }
         }
     }
-
 
     //Moves snake
     snakeMove() {
@@ -355,8 +385,10 @@ class Snake {
     //Main function which gets repeated 60 times second
     game() {
         let interval = setInterval(() => {
+        // let interval = setTimeout(() => {
             if(this.lost) clearInterval(interval);
-            ctx.clearRect(0,0, canvas.width, canvas.height);
+            // ctx.clearRect(0,0, canvas.width, canvas.height);
+            this.clearCanvas();
             this.drawFood();
             this.snakeMove();
             this.foodCollision();
@@ -374,14 +406,16 @@ snake.drawFood();
 snake.checkPositioning();
 snake.game();
 
-// document.getElementById('go').addEventListener('click', function() {
-    // document.body.requestFullscreen();
-    // this.parentElement.style.display = 'none';
-// })
 
-document.getElementsByClassName('menuBtn')[0].addEventListener('click', () => {
-    if(confirm('If You Leave You These Points Will Be Lost')) {
-        window.location.href = '../index.html';
-    }
-})
+//Events
+(() => {
+    //exit event
+    document.getElementsByClassName('menuBtn')[0].addEventListener('click', () => {
+        if(confirm('If You Leave You These Points Will Be Lost')) {
+            window.location.href = '../index.html';
+        }
+    })
 
+    //restart event
+    document.getElementById('restart').addEventListener('click', () => location.reload());
+})()
